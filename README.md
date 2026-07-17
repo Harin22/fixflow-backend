@@ -70,7 +70,7 @@ FixFlow aims to streamline that workflow by providing intelligent debugging assi
 
 ## Project Status
 
-🚧 Currently under active development.
+Currently under active development.
 
 This project is being built incrementally with a focus on production-ready backend engineering practices rather than rapid prototyping.
 
