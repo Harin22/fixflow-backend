@@ -16,7 +16,7 @@ FixFlow aims to streamline that workflow by providing intelligent debugging assi
 
 ---
 
-## Core Features
+## Core Features 
 
 - Intelligent code error analysis
 - AI-assisted bug explanations
