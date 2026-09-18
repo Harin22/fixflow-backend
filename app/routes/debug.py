@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from app import db
-from app.models import Debug
+from app.models import User, Debug
 from app.services.debug_service import analyze_code
 
 
@@ -15,13 +15,24 @@ def debug():
 
     user_id = get_jwt_identity()
 
+    # Get the logged-in user
+    user = User.query.get(int(user_id))
+
+    # Check free query limit
+    if user.debug_count >= 3 and not user.is_pro:
+        return {
+            "error": "Free limit reached. Please upgrade to Pro."
+        }, 403
+
     data = request.get_json()
 
     code = data["code"]
     error = data["error"]
 
+    # Ask Mercury AI
     result = analyze_code(code, error)
 
+    # Save debug history
     debug_record = Debug(
         user_id=int(user_id),
         code=code,
@@ -33,11 +44,16 @@ def debug():
     )
 
     db.session.add(debug_record)
+
+    # Increase user's free query count
+    user.debug_count += 1
+
     db.session.commit()
 
     return {
         "id": debug_record.id,
         "code": code,
         "error": error,
-        "analysis": result
+        "analysis": result,
+        "debug_count": user.debug_count
     }

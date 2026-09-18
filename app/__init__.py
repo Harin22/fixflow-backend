@@ -46,11 +46,13 @@ def create_app():
     # Import routes after database initialization
     from app.routes.debug import debug_bp
     from app.routes.auth import auth_bp
+    from app.routes.stripe import stripe_bp
 
     # Register routes
     app.register_blueprint(health_bp)
     app.register_blueprint(debug_bp)
     app.register_blueprint(auth_bp)
+    app.register_blueprint(stripe_bp)
 
     # Home route
     @app.route("/")

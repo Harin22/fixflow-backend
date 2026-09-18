@@ -10,6 +10,8 @@ class User(db.Model):
     email = db.Column(db.String(255), unique=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    debug_count = db.Column(db.Integer, default=0, nullable=False)
+    is_pro = db.Column(db.Boolean, default=False, nullable=False)
 
 
 class Debug(db.Model):
