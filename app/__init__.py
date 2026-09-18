@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 from sqlalchemy import text
 
 from app.routes.health import health_bp
-from app.routes.debug import debug_bp
 
 
 load_dotenv()
@@ -38,13 +37,14 @@ def create_app():
         print(" PostgreSQL connected!")
 
         # Import models
-        from app.models import User
+        from app.models import User, Debug
 
         # Create database tables
         db.create_all()
         print(" Database tables created!")
 
-    # Import auth AFTER db is initialized
+    # Import routes after database initialization
+    from app.routes.debug import debug_bp
     from app.routes.auth import auth_bp
 
     # Register routes
