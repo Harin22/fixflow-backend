@@ -71,7 +71,8 @@ def webhook():
 
         session = event["data"]["object"]
 
-        user_id = session.get("client_reference_id")
+        # FIX: Stripe Session is an object, not a normal dictionary
+        user_id = session.client_reference_id
 
         if user_id:
 
