@@ -57,3 +57,32 @@ def debug():
         "analysis": result,
         "debug_count": user.debug_count
     }
+
+
+@debug_bp.route("/api/debug/history", methods=["GET"])
+@jwt_required()
+def debug_history():
+
+    user_id = get_jwt_identity()
+
+    history = Debug.query.filter_by(
+        user_id=int(user_id)
+    ).order_by(
+        Debug.created_at.desc()
+    ).all()
+
+    return {
+        "history": [
+            {
+                "id": item.id,
+                "code": item.code,
+                "error": item.error,
+                "why_it_happened": item.why_it_happened,
+                "how_to_fix_it": item.how_to_fix_it,
+                "what_you_can_learn": item.what_you_can_learn,
+                "fixed_code": item.fixed_code,
+                "created_at": item.created_at.isoformat()
+            }
+            for item in history
+        ]
+    }, 200
