@@ -6,3 +6,4 @@ python-dotenv
 requests
 stripe
 gunicorn
+psycopg[binary]
