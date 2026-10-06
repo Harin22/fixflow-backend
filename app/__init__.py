@@ -7,7 +7,6 @@ from flask_jwt_extended import JWTManager
 from dotenv import load_dotenv
 from sqlalchemy import text
 
-
 from app.routes.health import health_bp
 
 
@@ -20,7 +19,7 @@ def create_app():
 
     app = Flask(__name__)
 
-    CORS(app)
+    CORS(app, origins=["https://fixflow-frontend-rho.vercel.app"])
 
     # JWT configuration
     app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
