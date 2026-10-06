@@ -19,7 +19,15 @@ def create_app():
 
     app = Flask(__name__)
 
-    CORS(app, origins=["https://fixflow-frontend-rho.vercel.app"])
+    CORS(
+        app,
+        origins=[
+            "http://127.0.0.1:5173",
+            "http://localhost:5173",
+            "https://fixflow-frontend-rho.vercel.app",
+        ],
+        supports_credentials=True,
+    )
 
     # JWT configuration
     app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
@@ -51,7 +59,7 @@ def create_app():
     from app.routes.auth import auth_bp
     from app.routes.stripe import stripe_bp
 
-    # Register routes
+    # Register blueprints
     app.register_blueprint(health_bp)
     app.register_blueprint(debug_bp)
     app.register_blueprint(auth_bp)
