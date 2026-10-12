@@ -1,3 +1,5 @@
+<img width="1300" height="600" alt="image" src="https://github.com/user-attachments/assets/0aa04a63-173a-4ef9-a321-7af7ad76f9dc" />
+
 # FixFlow - The Only Tool Vibe Coders Will Ever Need
 
 FixFlow is an AI-powered code debugging platform that helps vibe coders understand errors, identify root causes, and generate corrected code instead of blindly copying and pasting code. Also, can track code changes in the application you are building.
