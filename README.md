@@ -1,4 +1,4 @@
-<img width="1300" height="600" alt="image" src="https://github.com/user-attachments/assets/0aa04a63-173a-4ef9-a321-7af7ad76f9dc" />
+<img width="1300" height="630" alt="image" src="https://github.com/user-attachments/assets/0aa04a63-173a-4ef9-a321-7af7ad76f9dc" />
 
 # FixFlow - The Only Tool Vibe Coders Will Ever Need
 
@@ -9,7 +9,6 @@ FixFlow is an AI-powered code debugging platform that helps vibe coders understa
 - **AI-Powered Debugging:** Analyze code errors using InceptionLabs Mercury 2.5.
 - **Root Cause Analysis:** Understand why errors occur and how to resolve them.
 - **Code Correction:** Generate corrected code and actionable fixes.
-- **Learning-Oriented Explanations:** Understand the concepts behind programming errors.
 - **Authentication:** Secure user registration and login using JWT.
 - **Debug History:** Store and revisit previous analyses.
 - **Subscription Management:** Free usage limits and Stripe Checkout for Pro subscriptions.
