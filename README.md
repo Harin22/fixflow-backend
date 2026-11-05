@@ -1,4 +1,5 @@
-<img width="1300" height="630" alt="image" src="https://github.com/user-attachments/assets/0aa04a63-173a-4ef9-a321-7af7ad76f9dc" />
+<img width="1309" height="556" alt="fix flow 2" src="https://github.com/user-attachments/assets/d66df882-4310-4add-a7d9-744983b8517e" />
+
 
 # FixFlow - The Only Tool Vibe Coders Will Ever Need
 
